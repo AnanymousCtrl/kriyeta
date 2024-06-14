@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+    background-color: #2E2E2E;
+    color: white;
+    top: 0;
+}
+nav{
+    position: sticky;
+    /* border: 2px solid; */
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: #333; */
+    padding: 10px;
+    z-index: 1000;
+}
+
+.front{
+    height:100vh;
+    width:100vw;
+
+    background-image: url("../assets/b3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.goto{
+    width: 100vw;
+    height : 10vh;
+    
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.navlogo{
+    width:20vw;
+    height:100%;
+    position: relative;
+    top:1vh;
+
+}
+
+
+.tabs{
+    width:40%;
+    display:flex;
+    flex-direction: row;
+    gap: 10%;
+    
+}
+
+.front .goto .tabs a{
+    text-decoration: none;
+    color:white;
+    font-family: sans-serif;
+    font-size: 20px;
+    transition: 100ms;
+    
+}
+
+.front .goto .tabs a:hover{
+   text-decoration: underline;
+   transform: scale(1.02);
+
+    
+}
+
+.front .goto .buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    /* padding: 10px; */
+}
+
+
+.front .main-text {
+    position:relative;
+    top:20%;
+    left:4%
+    
+}
+
+.front .main-text img{
+    width:40vw;
+    height: 48vh;
+
+}
+.parition{
+    border: 8px solid black;
+    height: 8px;
+    width: 100vw;
+    /* color: black; */
+}
+.para-section{
+    display: flex;
+    justify-content: center;
+}
+.poetry-text{
+margin: 50px 0px 20px 0px;
+}
+.poetry-text img{
+height: 700px;
+}

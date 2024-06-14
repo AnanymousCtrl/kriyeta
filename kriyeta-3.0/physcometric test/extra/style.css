@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  .answer-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  label {
+    cursor: pointer;
+  }
+  
+  #result {
+    text-align: center;
+    margin-top: 20px;
+  }
+  

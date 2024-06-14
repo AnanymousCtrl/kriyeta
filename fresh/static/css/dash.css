@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #2e2e2e;
+  overflow-x: hidden;
+}
+.nav-bar {
+  width: 100vw;
+}
+
+.bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  width: 45%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 500px;
+}
+.bar ul {
+  margin: 30px;
+}
+.bar ul li {
+  display: inline-block;
+  text-decoration: none;
+  font-size: larger;
+  padding: 40px;
+}
+
+.bar ul li a {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+}
+
+.bar ul li a:hover {
+  text-decoration: underline;
+}
+
+.head-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.head-content .upper h1 {
+  font-size: 90px;
+  color: white;
+  padding: 20px 20px 0px 20px;
+}
+
+.head-content .lower h3 {
+  color: white;
+}
+
+.main {
+  width: 100%;
+  height: 70vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.biggest {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mainc {
+  width: 100%;
+  height: 48%;
+
+  
+}
+.journal{
+  background-color: #494747;
+  border-radius: 20px;
+  padding:15px
+
+}
+
+.journal h3{
+  color:white;
+  margin:30px 30px 0 30px;
+}
+
+.journal .content p{
+  color:white;
+  margin:15px 30px 30px 30px;
+}
+
+.btn{
+  margin:0 0 0 30px;
+  background-color: rgb(17, 196, 38);
+  padding: 5px 16px 5px 16px;
+  font-size: 17px;
+}
+ .small{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+ }
+
+.scard{
+  width:40vw;
+  height:95%;
+  background-color: #494747;
+  padding:40px 50px 50px 50px;
+  color:white;
+  border-radius: 20px;
+
+
+}
+ 
+
+.righti{
+  font-size: 30px;
+  margin:0 0 0 90%;
+  transition:100;
+}
+
+.righti:hover{
+  transform: scale(1.2);
+  color: rgb(30, 248, 74);
+
+}
+
+
+

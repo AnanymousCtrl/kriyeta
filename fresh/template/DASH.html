@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet"  type="text/css" href="/css/dash.css" />
+
+    
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="bar">
+        <div class="logo">
+          <img src="/img/logo.png" alt="logo" />
+        </div>
+        <ul>
+          <li><a href="">About us</a></li>
+          <li><a href="">Report</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">MedConnect</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="head-content">
+      <div class="upper">
+        <h1>Welcome,Ujjwal</h1>
+      </div>
+
+      <div class="lower">
+        <h3>Glad to see you here, Will be happier to help.</h3>
+      </div>
+    </div>
+
+    <section class="main">
+      <div class="biggest">
+        <div class="journal mainc bcard">
+          <h3>Express your Emotions</h3>
+          <div class="content">
+            <p>
+              Journaling is a great way to process your feelings and gain
+              clarity. Share your thoughts and let our ML model provide insights
+              and suggestions.
+            </p>
+          </div>
+          <button type="button"  onclick="window.location.href = '{{ var_home }}' ; " >
+            Start
+          </button>
+        </div>
+        <div class="small mainc">
+          <div class="pyq test scard">
+            <h3>
+              Psychometric<br />
+              Test
+            </h3>
+            <div class="content">
+              <p>Glad to see you here, will be happier to help.</p>
+              <button type="button"  onclick="window.location.href = '{{ var_ho }}' ; " >
+                Start test
+              </button>
+          <div class="maitri scard">
+            <h3>
+              Chat with <br />
+              Maitri
+            </h3>
+            <div class="content">
+              <p>Glad to see you here, will be happier to help.</p>
+            </div>
+            <a href="" id ="chatbot"> <i class="righti fa-solid fa-circle-chevron-right" type="button"></i></a>
+            <button type="button"  onclick="window.location.href = '{{ var_hom }}' ; " >
+              <i class="righti fa-solid fa-circle-chevron-right" type="button"></i>
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://kit.fontawesome.com/35e80eb03d.js" crossorigin="anonymous"></script>
+  </body>
+</html>

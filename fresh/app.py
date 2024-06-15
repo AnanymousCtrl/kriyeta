@@ -131,7 +131,7 @@ def regis():
 def dash_page():
     return render_template('DASH.html',var_home=url_for('mpage'),var_hom=url_for('bot'),var_ho = url_for('psy'))
 
-#model roots
+#model routes
 
 @app.route('/mpage')
 def mpage():

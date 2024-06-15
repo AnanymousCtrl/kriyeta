@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(canopyy.jpg);
+            background-size: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 20px;
+        }
+        .container {
+            background: rgb(36, 35, 35);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 400px;
+            padding: 10px;
+            margin: 20px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #000000;
+            font-size: medium;
+            color: rgb(166, 255, 0);
+            padding: 10px 20px;
+            border-color: #80ff00;
+
+            border-radius: 10px;
+            border: 2px solid;
+
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .response {
+            margin-right: 40px;
+        }
+        .intro {
+            background: rgb(181, 223, 53);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: left;
+            justify-content: center;
+            margin: 20px;
+            margin-left: 75px;
+            justify-content:center ;
+            align-items: center;
+
+        }
+        .intro p{
+            margin: 20px;
+            margin-left: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Chatbot</h1>
+        <div class="intro">
+            <p>In the digital age, mental health has<br> become a critical area of focus. Leveraging <br>technology to
+                assist in early detection and intervention <br>can be highly beneficial. A sentiment analyzer <br>designed
+                to assess user inputs for signs of depression <br>and anxiety can play a pivotal role in mental health
+                care.<br> This system aims to classify the type of depression or anxiety <br>a user might be experiencing
+                based on their textual inputs,<br> and provide relevant symptoms and recommendations.</p>
+            
+
+        </div>
+        <input type="text" id="userInput" placeholder="Type your message here...">
+        <button onclick="sendMessage()">Send</button>
+        <div class="response" id="response"></div>
+    </div>
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            const responseDiv = document.getElementById('response');
+
+            if (userInput.trim() === "") {
+                responseDiv.innerHTML = "<p style='color: red;'>Please enter a message.</p>";
+                return;
+            }
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: userInput }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    responseDiv.innerHTML = `
+                        <p><strong>Tag:</strong> ${data.tag}</p>
+                        <p><strong>Symptoms:</strong> ${data.symptoms.join(', ')}</p>
+                        <p><strong>Recommendations:</strong> ${data.recommendations.join(', ')}</p>
+                    `;
+                } else {
+                    responseDiv.innerHTML = `<p style='color: red;'>Error: ${data.error}</p>`;
+                }
+            } catch (error) {
+                responseDiv.innerHTML = `<p style='color: red;'>An error occurred: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

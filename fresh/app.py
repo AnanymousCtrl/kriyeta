@@ -42,10 +42,10 @@ def recognize_speech_from_mic():
     
     
 
-model = joblib.load('O:\\hackathon\\fresh\\model.pkl')
+model = joblib.load('model.pkl')
 
 
-with open('O:\\hackathon\\fresh\\intents02.json') as file:
+with open('intents02.json') as file:
     intents_data = json.load(file)
 
 
@@ -60,15 +60,15 @@ nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 # Load the trained model
-with open('O:\\hackathon\\fresh\\training.pkl', 'rb') as model_file:
+with open('training.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Load words and classes
-words = pickle.load(open('O:\\hackathon\\fresh\\texts.pkl', 'rb'))
-classes = pickle.load(open('O:\\hackathon\\fresh\\labels.pkl', 'rb'))
+words = pickle.load(open('texts.pkl', 'rb'))
+classes = pickle.load(open('labels.pkl', 'rb'))
 
 # Load intents from JSON
-with open('O:\\hackathon\\fresh\\intents.json', 'r') as file:
+with open('intents.json', 'r') as file:
     intents = json.load(file)
 
 def clean_up_sentence(sentence):

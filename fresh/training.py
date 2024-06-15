@@ -17,7 +17,7 @@ lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
 
 # Load intents file
-with open('O:\\hackathon\\fresh\\intents.json') as file:
+with open('intents.json') as file:
     intents = json.load(file)
 
 words = []
@@ -50,8 +50,8 @@ print(f"{len(classes)} classes: {classes}")
 print(f"{len(words)} unique lemmatized words")
 
 # Save words and classes for future use
-pickle.dump(words, open('O:\\hackathon\\fresh\\texts.pkl', 'wb'))
-pickle.dump(classes, open('O:\\hackathon\\fresh\\labels.pkl', 'wb'))
+pickle.dump(words, open('texts.pkl', 'wb'))
+pickle.dump(classes, open('labels.pkl', 'wb'))
 
 # Prepare training data
 training_sentences = [doc[0] for doc in documents]
@@ -78,7 +78,7 @@ grid_search.fit(training_sentences, training_labels)
 
 # Save the best model
 best_model = grid_search.best_estimator_
-with open('O:\\hackathon\\fresh\\training.pkl', 'wb') as model_file:
+with open('training.pkl', 'wb') as model_file:
     pickle.dump(best_model, model_file)
 
 print("Best model created and saved.")

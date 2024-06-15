@@ -4,7 +4,6 @@ from pymongo import MongoClient
 import bcrypt
 import joblib
 import json
-import speech_recognition as sr
 import os
 import pickle
 import random
@@ -22,23 +21,6 @@ mycol = mydb.mycol
 
 #model paths
 
-
-def recognize_speech_from_mic():
-    recognizer = sr.Recognizer()
-    microphone = sr.Microphone()
-
-    with microphone as source:
-        recognizer.adjust_for_ambient_noise(source)
-        print("Listening...")
-        audio = recognizer.listen(source)
-
-    try:
-        transcription = recognizer.recognize_google(audio)
-        return transcription
-    except sr.RequestError:
-        return "API unavailable"
-    except sr.UnknownValueError:
-        return "Unable to recognize speech"
     
     
 

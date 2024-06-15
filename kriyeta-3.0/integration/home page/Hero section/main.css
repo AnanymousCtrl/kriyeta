@@ -131,8 +131,10 @@ nav{
     justify-content: center;
 }
 .poetry-text{
-margin: 50px 0px 20px 0px;
+/* margin: 50px 0px 20px 0px; */
+background-image: ;
 }
 .poetry-text img{
-height: 700px;
+height: 750px;
+width: 100vw;
 }

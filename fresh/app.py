@@ -4,7 +4,6 @@ from pymongo import MongoClient
 import bcrypt
 import joblib
 import json
-from flask_bcrypt import Bcrypt
 import speech_recognition as sr
 import os
 import pickle
@@ -25,8 +24,9 @@ app.secret_key='mynameissoni'
 
 #model paths
 
-#
-# Initialize Flask app
+
+
+    
 
 model = joblib.load('fresh\\model.pkl')
 
@@ -180,7 +180,7 @@ def signl():
 
 
 
-#model roots
+#model routes
 
 @app.route('/madal')
 def madal():

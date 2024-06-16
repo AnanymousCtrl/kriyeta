@@ -4,6 +4,7 @@ from pymongo import MongoClient
 import bcrypt
 import joblib
 import json
+from flask_bcrypt import Bcrypt
 import speech_recognition as sr
 import os
 import pickle
@@ -12,25 +13,28 @@ import nltk
 import pandas as pd
 from nltk.stem import WordNetLemmatizer
 
-
 app = Flask(__name__, template_folder='template',
             static_folder='static', static_url_path='/')
 
 client = MongoClient('mongodb://localhost:27017/')
-mydb = client.mydb
-mycol = mydb.mycol
+mydk = client.mydk
+mycom = mydk.mycom
+
+app.secret_key='mynameissoni'
+
 
 #model paths
 
-
-
-    
+#
+# Initialize Flask app
 
 model = joblib.load('fresh\\model.pkl')
 
-
+# Load the intent data
 with open('fresh\\intents02.json') as file:
     intents_data = json.load(file)
+
+# Initialize Flask app
 
 
 #botpaths
@@ -44,15 +48,15 @@ nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 # Load the trained model
-with open('fresh\\training.pkl', 'rb') as model_file:
+with open('O:\\hackathon\\fresh\\training.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Load words and classes
-words = pickle.load(open('fresh\\texts.pkl', 'rb'))
-classes = pickle.load(open('fresh\\labels.pkl', 'rb'))
+words = pickle.load(open('O:\\hackathon\\fresh\\texts.pkl', 'rb'))
+classes = pickle.load(open('O:\\hackathon\\fresh\\labels.pkl', 'rb'))
 
 # Load intents from JSON
-with open('fresh\\intents.json', 'r') as file:
+with open('O:\\hackathon\\fresh\\intents.json', 'r') as file:
     intents = json.load(file)
 
 def clean_up_sentence(sentence):
@@ -125,34 +129,77 @@ def log_page():
 
     return render_template('login.html')
 
-@app.route('/regis', methods=['GET', 'POST'])
+@app.route('/logind',methods=['post'])
+def logind():
+     mail= request.form.get('email')
+     passw= request.form.get('password')
+    
+     user = mycom.find_one({'email': mail})
+     
+     name = user['name'].split(" ")
+     first_name=name[0].capitalize()
+     
+
+     
+     if user['password']==passw:
+         session['email'] = mail
+         return render_template('DASH.html',var_home=url_for('madal/http://localhost:5001/'),var_hom=url_for('bot'),var_ho = url_for('psy'),your_name=first_name)
+     else:
+         return redirect(url_for('log_page'))
+    
+    
+@app.route('/regis', methods=['get', 'post'])
 def regis():
     return render_template('register.html')
 
-@app.route('/dash', methods=['GET', 'POST'])
-def dash_page():
-    return render_template('DASH.html',var_home=url_for('mpage'),var_hom=url_for('bot'),var_ho = url_for('psy'))
+@app.route('/signl', methods=['POST'])
+def signl():
+    naam= request.form.get('name')
+    mail= request.form.get('email')
+    passw= request.form.get('password')
+    passw2= request.form.get('password1')
+    
+    
+    
+    existing_user=mycom.find_one({'email':mail})
+
+    if existing_user:
+        message="user already exists"
+        return render_template('login.html',message=message)
+
+    if passw != passw2 :
+        message="password doesnt match"
+        return render_template('register.html',message = message)
+    
+    message= "you can login now"
+    mycom.insert_one({'name':naam , 'email':mail,'password': passw})
+    return render_template('login.html',message=message)
+    
+
+
+
+
 
 #model roots
 
-@app.route('/mpage')
-def mpage():
-    return render_template('mpage.html')
+@app.route('/madal')
+def madal():
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        
+        # Get the user input from the request
         user_input = request.json.get('message')
 
         if not user_input:
             return jsonify({"error": "No input provided"}), 400
 
-        
+        # Predict the intent
         prediction = model.predict([user_input])[0]
 
-        
-        for intent in intents_data['intents']:
+        # Find the corresponding responses
+        for intent in intents_data['intentel']:
             if intent['tag'] == prediction:
                 response = {
                     "tag": prediction,
@@ -165,6 +212,10 @@ def predict():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+
+
 
 #routes for bot
 

@@ -1,5 +1,5 @@
 {
-    "intentel": [
+    "intents": [
       {
         "tag": "major_depression",
         "patterns": [

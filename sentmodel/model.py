@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 
 # Load the intent data
-with open('fresh\\intents02.json') as file:
+with open('sentmodel\\intents02.json') as file:
     intents_data = json.load(file)
 
 # Prepare the training data
@@ -23,4 +23,4 @@ model = make_pipeline(TfidfVectorizer(), LogisticRegression())
 model.fit(patterns, tags)
 
 # Save the trained model
-joblib.dump(model, 'fresh\\model.pkl')
+joblib.dump(model, 'sentmodel\\model.pkl')

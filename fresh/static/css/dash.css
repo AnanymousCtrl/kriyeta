@@ -111,37 +111,25 @@ body {
   margin:0 0 0 30px;
   background-color: rgb(17, 196, 38);
   padding: 5px 16px 5px 16px;
-  font-size: 17px;
+  font-size: 15px;
 }
  .small{
   display: flex;
   flex-direction: row;
   gap: 5%;
+  width:1
+
  }
 
 .scard{
-  width:40vw;
+  width:400px;
   height:95%;
   background-color: #494747;
-  padding:40px 50px 50px 50px;
+  padding:28px 40px 40px 40px;
   color:white;
   border-radius: 20px;
-
-
-}
- 
-
-.righti{
-  font-size: 30px;
-  margin:0 0 0 90%;
-  transition:100;
 }
 
-.righti:hover{
-  transform: scale(1.2);
-  color: rgb(30, 248, 74);
-
+.bobtn{
+  display:inline-block;
 }
-
-
-

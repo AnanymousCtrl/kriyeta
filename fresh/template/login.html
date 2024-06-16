@@ -141,11 +141,14 @@
 
             <div class="form">
                 <h1>Login</h1>
-                <form action="/dash">
+                {% if message%}
+               <h3>{{message}}</h3> 
+                {%endif%}
+                <form action="/logind" method="post">
                     <div class="input-box">
-                        <label>Username</label>
+                        <label>Email</label>
                         <br>
-                        <input type="text" name="username" autocomplete="off" required>
+                        <input type="text" name="email" autocomplete="off" required>
                     </div>
                     <div class="input-box">
                         <label>Password</label>

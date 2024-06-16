@@ -4,7 +4,11 @@ from pymongo import MongoClient
 import bcrypt
 import joblib
 import json
+
+from flask_bcrypt import Bcrypt
 import speech_recognition as sr
+
+
 import os
 import pickle
 import random
@@ -19,24 +23,17 @@ client = MongoClient('mongodb://localhost:27017/')
 mydk = client.mydk
 mycom = mydk.mycom
 
-
 app.secret_key='mynameissoni'
-
 
 
 #model paths
 
 
+#
+# Initialize Flask app
 
     
-
-model = joblib.load('fresh\\model.pkl')
-
-# Load the intent data
-with open('fresh\\intents02.json') as file:
-    intents_data = json.load(file)
-
-# Initialize Flask app
+    
 
 
 #botpaths
@@ -131,7 +128,6 @@ def log_page():
 
     return render_template('login.html')
 
-
 @app.route('/logind',methods=['post'])
 def logind():
      mail= request.form.get('email')
@@ -146,12 +142,11 @@ def logind():
      
      if user['password']==passw:
          session['email'] = mail
-         return render_template('DASH.html',var_home=url_for('madal/http://localhost:5001/'),var_hom=url_for('bot'),var_ho = url_for('psy'),your_name=first_name)
+         return render_template('DASH.html',var_hom=url_for('bot'),var_ho = url_for('psy'),your_name=first_name)
      else:
          return redirect(url_for('log_page'))
     
     
-
 @app.route('/regis', methods=['get', 'post'])
 def regis():
     return render_template('register.html')
@@ -166,23 +161,6 @@ def signl():
     
     
     existing_user=mycom.find_one({'email':mail})
-
-    if passw != passw2 :
-        message="password doesnt match"
-        return render_template('register.html',message = message)
-          
-           
-    users={'name':naam , 'email':mail,'password': passw}
-    mycom.insert_one(users)
-    return render_template('login.html')
-    
-
-
-
-@app.route('/dash', methods=['GET', 'POST'])
-def dash_page():
-    return render_template('DASH.html',var_home=url_for('mpage'),var_hom=url_for('bot'),var_ho = url_for('psy'))
-
 
     if existing_user:
         message="user already exists"

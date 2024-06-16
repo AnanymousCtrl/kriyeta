@@ -8,60 +8,62 @@
 </head>
 <style>
     * {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-body{
-    /* position: relative; */
-}
-    .main {
-        background-color: rgb(05, 44, 05);
-        position: relative;
-        height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: rgb(5, 44, 5);
+            color: white;
+            overflow-x: hidden;
+        }
+        .main {
+            position: relative;
+            height: 100vh;
+            padding: 5px;
+            padding-bottom: -5;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            /* align-items: center; */
+            text-align: left;
+        }
 
 
 
-    }
+        .title {
+            background-color: aliceblue;
+            color: black;
+            padding: 10px;
+            width: 80%;
+            max-width: 830px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
 
-    .title {
-        text-shadow:cqb;
-        background-color: aliceblue;
-        /* z-index: 1; */
-        /* border-radius: 5%; */
-        padding: 10px;
-        width: 55%;
-        
-        color: rgb(0, 0, 0);
-        /* text-align: center; */
 
-    }
+        .title h1 {
+            font-size: 1.8em;
+        }
 
-    .title h1{
-        /* margin: 10px; */
-        padding: 35px;
-    }
-    .para {
-        padding-top: 80px;
-        padding-left: 150px;
-        font-size: 22px;
-        /* width: 420px; */
-        /* display: flex; */
-        /* justify-content: center; */
-        /* text-align: center; */
-        line-height: 30px;
-        color: rgb(255, 255, 255);
-        
+        .para {
+            font-size: 1.2em;
+            line-height: 1.5em;
+            padding: 20px;
+            padding-left: 80px;
+            padding-top: 80px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
 
-        
+        .para p {
+            margin-bottom: 20px;
+        }
 
-    }
 
-    .para1 {
-        /* padding-left: 550px; */
-        
-        
-    }
+
 .space{
     margin-top: 20px;
     
@@ -73,16 +75,30 @@ body{
     /* top: 150px; */
     /* width: 10px; */
 }
-   
+@media (min-width: 768px) {
+            /* .main {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+                text-align: left;
+            } */
+
+            .title,
+            .para {
+                width: 50%;
+                max-width: none;
+            }
+
+        }
 </style>
 
 
 <body>
     <div class="main">
         <div class="image"><img src="Untitled design.png" alt=""></div>
-        <h1><div class="title">
-             A POETIC Message for YOU from YOUR COMPANION
-        </div></h1>
+        <div class="title"><span><h1>A POETIC Message for YOU from YOUR COMPANION</h1> </span>
+             
+        </div>
         
         <div class="para">
             <p> <b>What if,</b>Your mental health was visible to you,<br>

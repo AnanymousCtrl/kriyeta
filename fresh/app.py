@@ -1,14 +1,8 @@
 from flask import Flask, render_template,jsonify, redirect, url_for, session, request
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
-import bcrypt
-import joblib
+
 import json
-
-from flask_bcrypt import Bcrypt
-import speech_recognition as sr
-
-
 import os
 import pickle
 import random

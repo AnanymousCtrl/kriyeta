@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet"  type="text/css" href="/css/dash.css" />
+    <style>
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            height: 100%;
+            background-color: #164202;
+            background-image: url("{{ url_for('static', filename='img/canopyy.jpg') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            /* display: -webkit-box; */
+            /* display: -ms-flexbox; */
+            /* display: flex; */
+            /* display: -webkit-flex; */
+            /* flex-direction: row; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* position: relative; */
+        }
+        
+        
+        .mt-3{
+            color: white;
+        }
+        .page {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 400px;
+        }
+        
+        
+        
+         .head-content {
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+            text-transform: capitalize;
+            padding-bottom: 15px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .form .input-box {
+            position: relative;
+        }
+        
+        
+        
+        
+        
+        
+        #butn {
+            
+            background-color: #4CAF50;
+            border-radius: 17px;
+            font-family: Arial;
+            color: #123500;
+            font-size: 18px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+            border:1px solid #ffffff;
+            font-size: small;
+
+          }
+          .senti {
+            margin:20px;
+            padding:10px;
+            border:3px solid #1eff00;
+            border-radius:10px;
+            width:700px;
+            color: #1eff00;
+            background-color: rgba(0, 0, 0, 0.532);
+            text-align: center;
+            height: fit-content;
+
+          }
+          .assess {
+            margin:20px;
+            padding:10px;
+            border:3px solid #1eff00;
+            border-radius:10px;
+            width:700px;
+            align-items: center;
+            color: #1eff00;
+            background-color: rgba(0, 0, 0, 0.532);
+            text-align: center;
+          }
+          .maitri {
+            margin:20px;
+            padding:10px;
+            border:3px solid #1eff00;
+            border-radius:10px;
+            width:700px;
+            align-items: center;
+            color: #1eff00;
+            background-color: rgba(0, 0, 0, 0.532);
+            text-align: center;
+          }
+
+          .combine {
+            display: flex;
+          }
+          .lower {
+            color: #ffffff;
+          }
+          .nav-bar {
+            font-size: 5px;
+            margin-top: 1px;
+            margin-bottom: 60px;
+            background-color: rgba(18, 42, 5, 0.8);
+            height:150px;
+          }
+          .head-content{
+            background-color: #0f2a02;
+            height:300px;
+            background-color: rgba(29, 69, 7, 0.644);
+          }
+
+          .tim:hover{
+            background-color: #1eff00;
+          }
+     
+
+        
+          
+        </style>
+    </head>
+
+    
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="bar">
+        <div class="logo">
+          <img src="/img/logo.png" alt="logo" />
+        </div>
+       
+        <ul>
+          <span id="contain">
+          <span id="abu"><li><a class="tim" href="">About us</a></li></span></span>
+          <span id="contain">
+          <span id="rep"><li><a class="tim" href="">Report</a></li></span></span>
+          <span id="contain">
+          <span id="serv"><li><a class="tim" href="">Services</a></li></span></span>
+          <span id="contain">
+          <span id="mdc"><li><a class="tim" href="">MedConnect</a></li></span></span>
+        </ul>
+      </span>
+      </div>
+    </nav>
+
+    <div class="head-content">
+      <div class="upper">
+        <h1>WELCOME, {{your_name}}</h1>
+      </div>
+
+      <div class="lower">
+        <h3>Glad to see you here, Will be happier to help.</h3>
+      </div>
+    </div>
+
+    <div class = "combine">
+        <div class="senti">
+          
+          <h3><b>EXPRESS YOUR FEELINGS</b></h3>
+          <div class="lower">
+            <p>
+              Journaling is a great way to process your feelings and gain
+              clarity. Share your thoughts and let our ML model provide insights
+              and suggestions.
+            </p>
+          </div>
+          <a href="http://127.0.0.1:5001/">
+
+            <button class="btn btn-success some" type="button" >
+  
+              Start
+            </button></a>
+        </div>
+        
+          <div class="assess">
+            <h3>
+              <b>GAD-7 & PHQ-9 ASSESSMENT</b>
+            </h3>
+            <div class="lower">
+            
+              <p>Glad to see you here, will be happier to help.</p>
+            </div>
+              <button id ="butn" type="button"  onclick="window.location.href = '{{ var_ho }}' ; " >
+                <b>START TEST</b>
+              </button>
+          </div>
+          <div class="maitri">
+            <h3>
+              <b>CHAT WITH MAITRI</b> 
+            </h3>
+            <div class="lower">
+              <p>Glad to see you here, will be happier to help.</p>
+            </div>
+            <a href="" id ="chatbot"> <i class="righti fa-solid fa-circle-chevron-right" type="button"></i></a>
+            <button id="butn" type="button"  onclick="window.location.href = '{{ var_hom }}' ; " >
+             <b>CHAT NOW</b>
+            </button>
+            
+          </div>
+      </div>  
+        
+      
+    </section>
+
+    
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script> -->
+    <!-- <script src="https://kit.fontawesome.com/35e80eb03d.js" crossorigin="anonymous"></script> -->
+  </body>
+</html>

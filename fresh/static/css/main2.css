@@ -207,6 +207,7 @@ nav {
     width: 80vw;
     align-items: center;
     padding-left: 300px;
+    z-index: 1;
 }
 
 

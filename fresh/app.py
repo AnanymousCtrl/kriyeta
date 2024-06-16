@@ -41,15 +41,15 @@ nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 # Load the trained model
-with open('O:\\hackathon\\fresh\\training.pkl', 'rb') as model_file:
+with open('C:\\Users\\prami\\OneDrive\\Desktop\\kriyeta\\fresh\\training.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Load words and classes
-words = pickle.load(open('O:\\hackathon\\fresh\\texts.pkl', 'rb'))
-classes = pickle.load(open('O:\\hackathon\\fresh\\labels.pkl', 'rb'))
+words = pickle.load(open('C:\\Users\\prami\\OneDrive\\Desktop\\kriyeta\\fresh\\texts.pkl', 'rb'))
+classes = pickle.load(open('C:\\Users\\prami\\OneDrive\\Desktop\\kriyeta\\fresh\\labels.pkl', 'rb'))
 
 # Load intents from JSON
-with open('O:\\hackathon\\fresh\\intents.json', 'r') as file:
+with open('C:\\Users\\prami\\OneDrive\\Desktop\\kriyeta\\fresh\\intents.json', 'r') as file:
     intents = json.load(file)
 
 def clean_up_sentence(sentence):
@@ -135,7 +135,7 @@ def logind():
      
      if user['password']==passw:
          session['email'] = mail
-         return render_template('DASH.html',var_hom=url_for('bot'),var_ho = url_for('psy'),your_name=first_name)
+         return render_template('bash.html',var_hom=url_for('bot'),var_ho = url_for('psy'),your_name=first_name)
      else:
          return redirect(url_for('log_page'))
     

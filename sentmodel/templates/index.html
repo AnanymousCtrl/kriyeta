@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Chatbot</title>
+    <title>Express Yourself</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            background-image: url("{{ url_for('static', filename='background.jpg') }}");
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .container {
-            background: white;
+            background: rgba(0, 0, 0, 0.775);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
             text-align: center;
+            border-color: #77ff00;
+            border-width: 2px;
         }
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
+            color: aliceblue;
+            font-family: 'Times New Roman', Times, serif;
         }
         input[type="text"] {
-            width: 100%;
+            width: 280px;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -48,11 +54,17 @@
             margin-top: 20px;
             text-align: left;
         }
+        p{
+            color:#ccc;
+            font-size: small;
+            text-align: justify;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Mental Health Chatbot</h1>
+        <h1>Express Yourself</h1>
+        <p>In the digital age, mental health has become a critical area of focus. Leveraging technology to assist in early detection and intervention can be highly beneficial. A sentiment analyzer designed to assess user inputs for signs of depression and anxiety can play a pivotal role in mental health care. This system aims to classify the type of depression or anxiety a user might be experiencing based on their textual inputs, and provide relevant symptoms and recommendations.</p>
         <input type="text" id="userInput" placeholder="Type your message here...">
         <button onclick="sendMessage()">Send</button>
         <div class="response" id="response"></div>

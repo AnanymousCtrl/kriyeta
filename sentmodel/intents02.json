@@ -36,6 +36,8 @@
         "tag": "bipolar_disorder",
         "patterns": [
           "I have extreme mood swings",
+          "i am feeling loneliness",
+          "I am depressed",
           "Sometimes I'm really happy, then I'm extremely sad",
           "I go from being energetic to very depressed",
           "I experience highs and lows",
@@ -83,6 +85,7 @@
       {
             "tag":"Peripartum Depression", 
               "patterns": [
+                "i am struggling to love my child i don't know why",
                 "I feel very down after giving birth",
                 "I'm struggling to bond with my baby",
                 "I feel overwhelmed and sad since becoming a parent"
@@ -323,7 +326,7 @@
             },
           {
               "tag": "good-mood",
-              "patterns": ["I'm in a good mood today", "Feeling upbeat", "Feeling optimistic"],
+              "patterns": ["I'm in a good mood today","I am so happy", "Feeling upbeat","I am living my life", "Feeling optimistic"],
               "responses": {
                 "symptoms": ["there is no need for symptoms then, Is it?"],
               "recommendations": ["Good to hear you're in a good mood! Have a fantastic day."]
@@ -343,6 +346,14 @@
               "responses": {
                 "symptoms": ["there is no need for symptoms then, Is it?"],
               "recommendations": ["That's music to my ears! Here's to more uplifting moments."]
+              }
+            },
+            {
+              "tag": "an amazing day",
+              "patterns": ["I love spending time with my family.She is a talented singer.","He always makes me laugh.We had a great time at the party.","The sun is shining today.","The flowers in the garden are so beautiful.","I’m feeling happy and content."],
+              "responses": {
+                "symptoms": ["there is no need for symptoms then, Is it?"],
+                "recommendations": ["That's music to my ears! Here's to more uplifting moments."]
               }
             }
           

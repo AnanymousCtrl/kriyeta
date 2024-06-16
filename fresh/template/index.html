@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,102 +7,53 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url(canopyy.jpg);
-            background-size: auto;
+            background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 20px;
+            margin: 0;
         }
-
         .container {
-            background: rgb(36, 35, 35);
+            background: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 800px;
+            width: 300px;
             text-align: center;
         }
-
         h1 {
-            font-size: 40px;
-            color: rgb(255, 255, 255);
+            font-size: 24px;
             margin-bottom: 20px;
         }
-
-        h3 {
-
-            text-align: center;
-            color: rgb(255, 255, 255);
-            margin-bottom: 20px;
-        }
-
         input[type="text"] {
-            width: 400px;
+            width: 100%;
             padding: 10px;
-            margin: 20px;
-            border: 2px solid #ccc;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
             border-radius: 4px;
         }
-
         button {
-            background-color: #000000;
-            font-size: medium;
-            color: rgb(166, 255, 0);
+            background-color: #007bff;
+            color: white;
             padding: 10px 20px;
-            border-color: #80ff00;
-
-            border-radius: 10px;
-            border: 2px solid;
-
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
         }
-
         button:hover {
             background-color: #0056b3;
         }
-
         .response {
-            margin-right: 40px;
-
-        }
-
-        .intro {
-            background: rgb(181, 223, 53);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 600px;
+            margin-top: 20px;
             text-align: left;
-            justify-content: center;
-            margin: 20px;
-            margin-left: 75px;
-            justify-content:center ;
-            align-items: center;
-
-        }
-        .intro p{
-            margin: 20px;
-            margin-left: 50px;
-
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <h1>Express Yourself</h1>
-        <div class="intro">
-            <p>In the digital age, mental health has<br> become a critical area of focus. Leveraging <br>technology to
-                assist in early detection and intervention <br>can be highly beneficial. A sentiment analyzer <br>designed
-                to assess user inputs for signs of depression <br>and anxiety can play a pivotal role in mental health
-                care.<br> This system aims to classify the type of depression or anxiety <br>a user might be experiencing
-                based on their textual inputs,<br> and provide relevant symptoms and recommendations.</p>
-            
-
-        </div>
-        <input type="text" id="userInput" placeholder="Type your message here..."><br>
+        <h1>Mental Health Chatbot</h1>
+        <input type="text" id="userInput" placeholder="Type your message here...">
         <button onclick="sendMessage()">Send</button>
         <div class="response" id="response"></div>
     </div>
@@ -143,5 +93,4 @@
         }
     </script>
 </body>
-
 </html>

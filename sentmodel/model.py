@@ -4,11 +4,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 
-
-with open('fresh\\intents02.json') as file:
+# Load the intent data
+with open('sentmodel\\intents02.json') as file:
     intents_data = json.load(file)
 
-
+# Prepare the training data
 patterns = []
 tags = []
 for intent in intents_data['intents']:
@@ -16,11 +16,11 @@ for intent in intents_data['intents']:
         patterns.append(pattern)
         tags.append(intent['tag'])
 
-
+# Create a TF-IDF vectorizer and logistic regression model pipeline
 model = make_pipeline(TfidfVectorizer(), LogisticRegression())
 
-
+# Train the model
 model.fit(patterns, tags)
 
-
-joblib.dump(model, 'fresh\\model.pkl')
+# Save the trained model
+joblib.dump(model, 'sentmodel\\model.pkl')

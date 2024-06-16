@@ -114,7 +114,7 @@ def chatbot_response(msg):
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    return render_template('main.html', var_home=url_for('log_page'))
+    return render_template('main2.html', var_home=url_for('log_page'))
 
 
 @app.route('/Login', methods=['GET', 'POST'])

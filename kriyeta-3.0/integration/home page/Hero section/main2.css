@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #2E2E2E;
+    color: white;
+    top: 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.main-text {
+    margin: 50px;
+    margin-top: 90px;
+}
+
+.main-text {
+    font-family: 'Merriweather';
+    font-weight: bolder;
+    font-size: 95px;
+}
+
+.main-text h1 {
+    font-family: 'Merriweather';
+    font-size: 40px;
+}
+
+.bolder {
+    font-family: 'Merriweather';
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.front {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.goto {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navlogo {
+    width: 20vw;
+    height: 100%;
+    position: relative;
+    top: 1vh;
+}
+
+.tabs {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.front .goto .tabs a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    transition: 100ms;
+}
+
+.front .goto .tabs a:hover {
+    text-decoration: underline;
+    transform: scale(1.02);
+}
+
+.front .goto .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 10px;
+}
+
+.front .main-text {
+    position: relative;
+    top: 20%;
+    left: 4%
+}
+
+.front .main-text img {
+    width: 40vw;
+    height: 48vh;
+}
+
+.parition {
+    border: 8px solid black;
+    height: 8px;
+    width: 100vw;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    padding: 5px;
+    padding-bottom: -5;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: rgb(5, 44, 5);
+}
+
+.title {
+    background-color: aliceblue;
+    color: black;
+    padding: 10px;
+    width: 80%;
+    max-width: 830px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.title h1 {
+    font-size: 1.8em;
+}
+
+.para {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    padding: 20px;
+    padding-left: 80px;
+    padding-top: 80px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.para p {
+    margin-bottom: 20px;
+}
+
+.space {
+    margin-top: 20px;
+}
+
+.image img {
+    position: absolute;
+    height: 700px;
+    left: 850px;
+}
+
+/* @media (max-width: 768px) {
+    .main-text {
+        font-size: 50px;
+        margin: 20px;
+    }
+
+    .main-text h1 {
+        font-size: 30px;
+    }
+
+    .title .para {
+        width: 90%;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+
+    .image img {
+        position: relative;
+        height: auto;
+        width: 100%;
+        left: 0;
+        margin-top: 20px;
+    }
+ */
+.card-section{
+    color: rgb(239, 236, 236);
+    gap: 10%;
+    background-image: url(enhanced\ \(13\).jpg);
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-size: cover;
+}
+.card-heading{
+    /* display: flex; */
+    text-align: center;
+    justify-content: center;
+    color: black;
+    padding-top: 60px;
+    width: 80vw;
+    align-items: center;
+    padding-left: 300px;
+}
+
+.card-heading h1{
+    
+    
+}
+
+
+.card-area {
+   
+    /* padding: 45px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 13vh; */
+   
+    /* background-color: rgb(3, 51, 3); */
+    /* background-image: "handscommunity"; */
+   
+    /* background-repeat: repeat-x; */
+}
+
+.card-area {
+    color: rgb(239, 236, 236);
+    /* padding: 45px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 13vh; */
+    gap: 10%;
+    /* background-color: rgb(3, 51, 3); */
+    /* background-image: "handscommunity"; */
+    background-image: url(enhanced\ \(13\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    /* background-repeat: repeat-x; */
+
+    .card-heading {
+        position: absolute;
+    }
+
+}
+
+.card {
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: rgb(34, 50, 16);
+    width: 220px;
+    height: 370px;
+    border-radius: 7px;
+    margin-top: 8px;
+    margin-right: 10px;
+
+
+}
+
+.card-image {
+    padding: 8px;
+    margin: 8px;
+}
+
+.card-image img {
+    border-radius: 7px;
+}
+
+.content p {
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: rgb(230, 240, 227);
+
+}
+
+.content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+
+}
+
+.content {
+    padding: 7px 13px;
+    color: white;
+
+}
+
+.capsule {
+    padding: 0px 1px;
+    margin-left: 8px;
+    color: white;
+}
+
+.capsule span {
+    border: 2px solid rgba(248, 252, 249, 0.19);
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 0px 6px;
+    font-size: 9px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card-button {
+    text-align: center;
+    margin-top: -25px;
+}
+
+.card-button button {
+    padding: 4px 7px;
+    border-radius: 10px;
+    border: none;
+    font-size: 7px;
+    font-weight: bold;
+    background-color: rgba(247, 247, 247, 0.447);
+    color: rgba(242, 242, 249, 0.468);
+    cursor: pointer;
+}
+
+.cadr-button button:hover {
+    background-color: rgba(178, 212, 189, 0.447);
+    /* color: ; */
+
+}

@@ -119,7 +119,6 @@ def hello_world():
 
 @app.route('/Login', methods=['GET', 'POST'])
 def log_page():
-
     return render_template('login.html')
 
 @app.route('/logind',methods=['post'])

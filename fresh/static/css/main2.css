@@ -51,7 +51,7 @@ nav {
 .front {
     height: 100vh;
     width: 100vw;
-    background-image: url("background.jpg");
+    background-image: url("/img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -193,7 +193,7 @@ nav {
 .card-section{
     color: rgb(239, 236, 236);
     gap: 10%;
-    background-image: url(enhanced\ \(13\).jpg);
+    background-image: url(/img/enhanced\ \(13\).jpg);
        background-size: cover;
        background-repeat: no-repeat;
        background-size: cover;
@@ -209,10 +209,7 @@ nav {
     padding-left: 300px;
 }
 
-.card-heading h1{
-    
-    
-}
+
 
 
 .card-area {
@@ -239,7 +236,7 @@ nav {
     gap: 10%;
     /* background-color: rgb(3, 51, 3); */
     /* background-image: "handscommunity"; */
-    background-image: url(enhanced\ \(13\).jpg);
+    background-image: url(/img/enhanced\ \(13\).jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
@@ -333,4 +330,9 @@ nav {
     background-color: rgba(178, 212, 189, 0.447);
     /* color: ; */
 
+}
+
+#mainbtn{
+    width: 20px;
+    height: 10px;
 }

@@ -18,9 +18,12 @@ app = Flask(__name__, template_folder='template',
 client = MongoClient('mongodb://localhost:27017/')
 mydk = client.mydk
 mycom = mydk.mycom
+<<<<<<< Updated upstream
 
 app.secret_key='mynameissoni'
 
+=======
+>>>>>>> Stashed changes
 
 #model paths
 
@@ -129,6 +132,7 @@ def log_page():
 
     return render_template('login.html')
 
+<<<<<<< Updated upstream
 @app.route('/logind',methods=['post'])
 def logind():
      mail= request.form.get('email')
@@ -148,6 +152,8 @@ def logind():
          return redirect(url_for('log_page'))
     
     
+=======
+>>>>>>> Stashed changes
 @app.route('/regis', methods=['get', 'post'])
 def regis():
     return render_template('register.html')
@@ -158,10 +164,28 @@ def signl():
     mail= request.form.get('email')
     passw= request.form.get('password')
     passw2= request.form.get('password1')
+<<<<<<< Updated upstream
     
     
     
     existing_user=mycom.find_one({'email':mail})
+=======
+    if passw != passw2 :
+        message="password doesnt match"
+        return render_template('register.html',message = message)
+          
+           
+    users={'name':naam , 'email':mail,'password': passw}
+    mycom.insert_one(users)
+    return render_template('login.html')
+    
+
+
+
+@app.route('/dash', methods=['GET', 'POST'])
+def dash_page():
+    return render_template('DASH.html',var_home=url_for('mpage'),var_hom=url_for('bot'),var_ho = url_for('psy'))
+>>>>>>> Stashed changes
 
     if existing_user:
         message="user already exists"

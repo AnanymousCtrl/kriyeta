@@ -131,8 +131,6 @@ def logind():
      name = user['name'].split(" ")
      first_name=name[0].capitalize()
      
-
-     
      if user['password']==passw:
          session['email'] = mail
          return render_template('bash.html',var_hom=url_for('bot'),var_ho = url_for('psy'),your_name=first_name)
